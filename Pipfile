@@ -1,0 +1,27 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+numpy = "*"
+scipy = "*"
+matplotlib = "*"
+ipython = "*"
+jupyter = "*"
+pandas = "*"
+sympy = "*"
+nose = "*"
+"d568612" = {path = "../pybrain-master/", editable = true}
+
+
+[requires]
+
+python_version = "2.7"
+
+
+[dev-packages]
+
