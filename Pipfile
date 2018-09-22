@@ -1,12 +1,9 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
-
 numpy = "*"
 scipy = "*"
 matplotlib = "*"
@@ -16,12 +13,12 @@ pandas = "*"
 sympy = "*"
 nose = "*"
 "d568612" = {path = "../pybrain-master/", editable = true}
-
+scikit-learn = "*"
+pybrain = {editable = true, path = "./../pybrain-master"}
+statsmodels = "*"
+patsy = "*"
 
 [requires]
-
 python_version = "2.7"
 
-
 [dev-packages]
-
