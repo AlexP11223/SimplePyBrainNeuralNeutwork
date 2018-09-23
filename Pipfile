@@ -17,6 +17,7 @@ scikit-learn = "*"
 pybrain = {editable = true, path = "./../pybrain-master"}
 statsmodels = "*"
 patsy = "*"
+seaborn = "*"
 
 [requires]
 python_version = "2.7"
