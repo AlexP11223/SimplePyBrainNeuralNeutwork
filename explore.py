@@ -6,7 +6,7 @@ file_path = 'data/data_banknote_authentication.csv'
 attributes = ['varianceWT', 'skewnessWT', 'curtosisWT', 'entropy']
 label = 'class'
 
-df = pd.DataFrame(pd.read_csv(file_path, sep=','))
+df = pd.read_csv(file_path, sep=',')
 
 print(df.describe())
 
