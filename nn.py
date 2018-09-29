@@ -2,6 +2,7 @@ import pandas as pd
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import ClassificationDataSet
+from matplotlib import pyplot
 
 from nnvisualizer import PybrainNNVisualizer
 
@@ -37,7 +38,14 @@ PybrainNNVisualizer(fnn).draw()
 print('Training')
 
 trainer = BackpropTrainer(fnn, train_ds, verbose=True)
-trainer.trainUntilConvergence(maxEpochs=100, validationProportion=0.5)
+train_out = trainer.trainUntilConvergence(maxEpochs=100, validationProportion=0.5)
+
+pyplot.plot(train_out[0], label='Training set')
+pyplot.plot(train_out[1], label='Validation set')
+pyplot.xlabel('Epochs')
+pyplot.ylabel('Error')
+pyplot.legend()
+pyplot.show()
 
 out = fnn.activateOnDataset(test_ds)
 
