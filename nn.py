@@ -3,7 +3,7 @@ from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import ClassificationDataSet
 from matplotlib import pyplot
-
+from pybrain.utilities import percentError
 from nnvisualizer import PybrainNNVisualizer
 
 input_dir = 'data/norm/'
@@ -54,3 +54,6 @@ out_values = [it[0] for it in out.tolist()]
 print(out_values)
 out_values = [int(abs(round(it))) for it in out_values]
 print(out_values)
+
+error = percentError(out_values, test_ds.getField('target'))
+print('Error rate: %.2f%%' % error)
