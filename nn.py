@@ -14,7 +14,7 @@ label = 'class'
 class_names = ['Forged', 'Genuine']
 
 hidden_neurons_count = 8
-max_epoch = 300
+max_epoch = 100
 validation_proportion = 0.5
 learning_rate = 0.1
 
