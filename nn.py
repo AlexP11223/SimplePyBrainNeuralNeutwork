@@ -14,6 +14,10 @@ label = 'class'
 class_names = ['Forged', 'Genuine']
 
 hidden_neurons_count = 8
+max_epoch = 100
+validation_proportion = 0.5
+learning_rate = 0.1
+
 
 def to_dataset(df):
     ds = ClassificationDataSet(len(attributes), 1, class_labels=class_names)
@@ -37,8 +41,8 @@ PybrainNNVisualizer(fnn).draw()
 
 print('Training')
 
-trainer = BackpropTrainer(fnn, train_ds, verbose=True)
-train_out = trainer.trainUntilConvergence(maxEpochs=100, validationProportion=0.5)
+trainer = BackpropTrainer(fnn, train_ds, learningrate=learning_rate, verbose=True)
+train_out = trainer.trainUntilConvergence(maxEpochs=max_epoch, validationProportion=validation_proportion)
 
 pyplot.plot(train_out[0], label='Training set')
 pyplot.plot(train_out[1], label='Validation set')
