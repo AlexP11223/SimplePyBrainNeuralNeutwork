@@ -13,6 +13,11 @@ scaler = StandardScaler()
 scaler.fit(train_data.drop(label, 1))
 
 
+def print_info(df):
+    print(df.drop(label, 1).describe())
+    print('')
+
+
 def scale(df):
     df_features = df.drop(label, 1)
     scaled_data = scaler.transform(df_features)
@@ -21,8 +26,21 @@ def scale(df):
     return scaled_df
 
 
+print('Train set')
+print_info(train_data)
+print('Test set')
+print_info(test_data)
+
 train_data = scale(train_data)
 test_data = scale(test_data)
+
+print('')
+print('Normalized')
+print('')
+print('Train set')
+print_info(train_data)
+print('Test set')
+print_info(test_data)
 
 train_data.to_csv(output_dir + 'train_' + base_file_name + '.csv', sep=',', index=False)
 test_data.to_csv(output_dir + 'test_' + base_file_name + '.csv', sep=',', index=False)
