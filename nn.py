@@ -14,7 +14,7 @@ label = 'class'
 class_names = ['Forged', 'Genuine']
 
 hidden_neurons_count = 8
-max_epoch = 100
+max_epoch = 300
 validation_proportion = 0.5
 learning_rate = 0.1
 
@@ -60,4 +60,4 @@ out_values = [int(abs(round(it))) for it in out_values]
 print(out_values)
 
 error = percentError(out_values, test_ds.getField('target'))
-print('Error rate: %.2f%%' % error)
+print('Error rate: %.4f%%' % error)
