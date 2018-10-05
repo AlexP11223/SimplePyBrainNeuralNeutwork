@@ -1,10 +1,10 @@
 import pandas as pd
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.tools.shortcuts import buildNetwork
-from pybrain.datasets import ClassificationDataSet
 from matplotlib import pyplot
 from pybrain.utilities import percentError
 from nnvisualizer import PybrainNNVisualizer
+from utils import to_dataset
 
 input_dir = 'data/norm/'
 base_file_name = 'data_banknote_authentication'
@@ -18,21 +18,11 @@ max_epoch = 100
 validation_proportion = 0.5
 learning_rate = 0.1
 
-
-def to_dataset(df):
-    ds = ClassificationDataSet(len(attributes), 1, class_labels=class_names)
-    for i, row in df.iterrows():
-        input_row = [row[attr] for attr in attributes]
-        output_row = (row[label])
-        ds.addSample(input_row, output_row)
-    return ds
-
-
 train_data = pd.read_csv(input_dir + 'train_' + base_file_name + '.csv', sep=',')
 test_data = pd.read_csv(input_dir + 'test_' + base_file_name + '.csv', sep=',')
 
-train_ds = to_dataset(train_data)
-test_ds = to_dataset(test_data)
+train_ds = to_dataset(train_data, attributes, class_names, label)
+test_ds = to_dataset(test_data, attributes, class_names, label)
 
 fnn = buildNetwork(train_ds.indim, hidden_neurons_count, train_ds.outdim)
 
