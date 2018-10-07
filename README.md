@@ -1,4 +1,4 @@
-Some scripts for dataset exploration, normalization and classification with neural network on Banknote Authentication Data Set from UCI repository. https://archive.ics.uci.edu/ml/datasets/banknote+authentication 
+Some scripts for dataset exploration, normalization and classification with neural network and other methods (decision tree, SVM) on Banknote Authentication Data Set from UCI repository. https://archive.ics.uci.edu/ml/datasets/banknote+authentication 
 
 # Usage
 
@@ -19,3 +19,9 @@ Install dependencies by executing `pipenv install` and run the scripts, all para
 ![](https://i.imgur.com/kwitTX3.png)
 
 ![](https://i.imgur.com/onsknmR.png)
+
+![](https://i.imgur.com/K9E5JZM.png)
+
+![](https://i.imgur.com/uzE29bo.png)
+
+![](https://i.imgur.com/1Y4nrty.png)
