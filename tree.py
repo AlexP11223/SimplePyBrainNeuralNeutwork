@@ -13,7 +13,7 @@ attributes = ['varianceWT', 'skewnessWT', 'curtosisWT', 'entropy']
 label = 'class'
 class_names = ['Forged', 'Genuine']
 
-max_depth = 7
+max_depth = None
 min_samples_split = 2
 min_samples_leaf = 2
 
