@@ -11,13 +11,17 @@ attributes = ['varianceWT', 'skewnessWT', 'curtosisWT', 'entropy']
 label = 'class'
 class_names = ['Forged', 'Genuine']
 
+max_depth = 7
+min_samples_split = 2
+min_samples_leaf = 5
+
 train_data = pd.read_csv(input_dir + 'train_' + base_file_name + '.csv', sep=',')
 test_data = pd.read_csv(input_dir + 'test_' + base_file_name + '.csv', sep=',')
 
 train_x, train_y = to_xy(train_data, attributes, label)
 test_x, test_y = to_xy(test_data, attributes, label)
 
-clf = tree.DecisionTreeClassifier()
+clf = tree.DecisionTreeClassifier(max_depth=max_depth, min_samples_split=min_samples_split, min_samples_leaf=min_samples_leaf)
 clf.fit(train_x, train_y)
 out = clf.predict(test_x)
 
